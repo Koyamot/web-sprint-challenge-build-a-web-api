@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id/projectactions', (req, res) => {
     const id = req.params.id;
     Project.getProjectActions(id)
     .then(act => {

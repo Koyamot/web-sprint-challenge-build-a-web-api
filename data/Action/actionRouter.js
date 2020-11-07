@@ -35,5 +35,17 @@ router.put('/:id', (req, res) => {
   
   });
 
+  router.delete('/:id', (req, res) => {
+    // do your magic!
+    const id = req.params.id;
+    Action.remove(id)
+      .then(act => {
+        req.status(200).json ({
+          message: "You deleted this post",
+          actionDeleted: act
+        })
+      })
+  });
+
 
 module.exports = router;
